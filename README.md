@@ -1,4 +1,3 @@
-# quickshare
 # 🚀 QuickShare
 
 A real-time file and text sharing web application inspired by Send Anywhere.
