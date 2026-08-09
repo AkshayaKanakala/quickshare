@@ -1,0 +1,807 @@
+/* =====================================================
+   QUICKSHARE - PREMIUM UI
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+/* =====================================================
+   RESET
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BODY
+   ===================================================== */
+
+body {
+    min-height: 100vh;
+
+    font-family: "Inter", "Segoe UI", sans-serif;
+
+    color: #f8fafc;
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(99, 102, 241, 0.30),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(168, 85, 247, 0.25),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(14, 165, 233, 0.20),
+            transparent 35%
+        ),
+        #050816;
+
+    padding: 55px 20px;
+
+    position: relative;
+}
+
+
+/* =====================================================
+   FLOATING BACKGROUND LIGHT
+   ===================================================== */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 550px;
+    height: 550px;
+
+    top: -180px;
+    left: -180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(99, 102, 241, 0.35),
+            transparent 70%
+        );
+
+    filter: blur(25px);
+
+    animation: floatLight1 12s ease-in-out infinite;
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 600px;
+    height: 600px;
+
+    right: -220px;
+    bottom: -220px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(14, 165, 233, 0.30),
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    animation: floatLight2 15s ease-in-out infinite;
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+
+/* =====================================================
+   ANIMATED WAVES
+   ===================================================== */
+
+body {
+    background-attachment: fixed;
+}
+
+
+/* Large floating wave-like shapes */
+
+body > div::before {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 45% 55% 60% 40%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.08),
+            rgba(56, 189, 248, 0.04)
+        );
+
+    filter: blur(1px);
+
+    animation: waveFloat 10s ease-in-out infinite;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =====================================================
+   MAIN TITLE
+   ===================================================== */
+
+h1 {
+    position: relative;
+
+    text-align: center;
+
+    font-size: clamp(2.5rem, 6vw, 4rem);
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 55px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #ffffff 10%,
+            #a5b4fc 40%,
+            #38bdf8 70%,
+            #c084fc 90%
+        );
+
+    background-size: 300% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation: gradientText 6s linear infinite;
+
+    filter:
+        drop-shadow(0 0 20px rgba(99, 102, 241, 0.25));
+}
+
+
+/* Small glowing underline */
+
+h1::after {
+    content: "";
+
+    display: block;
+
+    width: 90px;
+    height: 4px;
+
+    margin: 15px auto 0;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6366f1,
+            #38bdf8,
+            #c084fc
+        );
+
+    box-shadow:
+        0 0 20px rgba(99, 102, 241, 0.8);
+}
+
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+body > div {
+    position: relative;
+
+    width: min(680px, 100%);
+
+    margin: 0 auto 28px;
+
+    padding: 32px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.075),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Card top shine */
+
+body > div::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.8),
+            transparent
+        );
+
+    animation: shine 7s linear infinite;
+
+    pointer-events: none;
+}
+
+
+body > div:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(129, 140, 248, 0.35);
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.45),
+        0 0 40px rgba(99, 102, 241, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+
+/* =====================================================
+   HEADINGS
+   ===================================================== */
+
+h2 {
+    font-size: 1.35rem;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+
+    color: #ffffff;
+
+    letter-spacing: -0.4px;
+}
+
+
+/* =====================================================
+   TEXTAREA
+   ===================================================== */
+
+textarea {
+    width: calc(100% - 120px);
+
+    min-height: 135px;
+
+    padding: 16px;
+
+    resize: vertical;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(148, 163, 184, 0.20);
+
+    outline: none;
+
+    background:
+        rgba(2, 6, 23, 0.65);
+
+    color: #f8fafc;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    vertical-align: top;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+textarea::placeholder {
+    color: #64748b;
+}
+
+
+textarea:focus {
+    background:
+        rgba(2, 6, 23, 0.85);
+
+    border-color: #818cf8;
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.12),
+        0 0 30px rgba(99, 102, 241, 0.08);
+}
+
+
+/* =====================================================
+   TEXT / CODE INPUT
+   ===================================================== */
+
+input[type="text"],
+#code {
+    width: calc(100% - 120px);
+
+    padding: 15px 17px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(148, 163, 184, 0.20);
+
+    outline: none;
+
+    background:
+        rgba(2, 6, 23, 0.65);
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+input[type="text"]:focus,
+#code:focus {
+    border-color: #818cf8;
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+
+input::placeholder {
+    color: #64748b;
+}
+
+
+/* =====================================================
+   FILE INPUT
+   ===================================================== */
+
+input[type="file"] {
+    width: calc(100% - 125px);
+
+    padding: 11px;
+
+    border-radius: 14px;
+
+    border: 1px dashed rgba(148, 163, 184, 0.30);
+
+    background:
+        rgba(2, 6, 23, 0.55);
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+}
+
+
+input[type="file"]::file-selector-button {
+    border: none;
+
+    padding: 10px 15px;
+
+    margin-right: 10px;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1e293b,
+            #334155
+        );
+
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+input[type="file"]::file-selector-button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #334155,
+            #475569
+        );
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+button {
+    position: relative;
+
+    padding: 14px 22px;
+
+    margin-left: 8px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #4f46e5 50%,
+            #7c3aed
+        );
+
+    background-size: 200% 200%;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(79, 70, 229, 0.30);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-position 0.4s ease;
+}
+
+
+button:hover {
+    transform: translateY(-3px);
+
+    background-position: 100% 50%;
+
+    box-shadow:
+        0 15px 35px rgba(99, 102, 241, 0.45),
+        0 0 25px rgba(99, 102, 241, 0.15);
+}
+
+
+button:active {
+    transform: translateY(-1px);
+}
+
+
+/* Button shine */
+
+button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 60%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.25),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.6s ease;
+}
+
+
+button:hover::before {
+    left: 130%;
+}
+
+
+/* =====================================================
+   GENERATED CODE
+   ===================================================== */
+
+#sendCode,
+#fileCode {
+    min-height: 20px;
+
+    margin-top: 18px;
+
+    padding: 13px 16px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    color: #a5b4fc;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.12),
+            rgba(56, 189, 248, 0.06)
+        );
+
+    border: 1px solid rgba(99, 102, 241, 0.20);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+
+/* =====================================================
+   RECEIVED OUTPUT
+   ===================================================== */
+
+#output {
+    margin-top: 20px;
+
+    min-height: 65px;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(2, 6, 23, 0.70);
+
+    border: 1px solid rgba(148, 163, 184, 0.15);
+
+    color: #cbd5e1;
+
+    font-family:
+        "Consolas",
+        "Courier New",
+        monospace;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    white-space: pre-wrap;
+
+    overflow-wrap: anywhere;
+
+    box-shadow:
+        inset 0 0 30px rgba(0,0,0,0.15);
+}
+
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes floatLight1 {
+
+    0%, 100% {
+        transform:
+            translate3d(0, 0, 0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate3d(100px, 70px, 0)
+            scale(1.15);
+    }
+}
+
+
+@keyframes floatLight2 {
+
+    0%, 100% {
+        transform:
+            translate3d(0, 0, 0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate3d(-100px, -80px, 0)
+            scale(1.12);
+    }
+}
+
+
+@keyframes waveFloat {
+
+    0%, 100% {
+        transform:
+            translate(0, 0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translate(35px, -25px)
+            rotate(12deg);
+    }
+}
+
+
+@keyframes gradientText {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+@keyframes shine {
+
+    0% {
+        left: -100%;
+    }
+
+    20% {
+        left: 130%;
+    }
+
+    100% {
+        left: 130%;
+    }
+}
+
+
+/* =====================================================
+   SCROLLBAR
+   ===================================================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #050816;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            #4f46e5,
+            #0ea5e9
+        );
+
+    border-radius: 20px;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 35px 15px;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+        margin-bottom: 38px;
+    }
+
+    body > div {
+        padding: 24px 20px;
+        border-radius: 20px;
+    }
+
+    textarea,
+    input[type="file"],
+    input[type="text"],
+    #code {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0 0;
+    }
+}
+
+
+/* =====================================================
+   REDUCE ANIMATION FOR USERS WHO PREFER IT
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
