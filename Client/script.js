@@ -1,4 +1,4 @@
-const API = "http://localhost:5000";
+const API = "https://quickshare-api-ljm7.onrender.com";
 
 // Send text
 async function sendText() {
