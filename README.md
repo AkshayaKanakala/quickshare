@@ -5,9 +5,9 @@ A fast, simple, and modern web application for sharing **text and files** betwee
 ## 🌐 Live Demo
 
 **Try QuickShare:**
-👉 **[Open QuickShare](YOUR_NETLIFY_URL)**
+👉 **https://quick-share-file-transfer.netlify.app/**
 
-> Replace `YOUR_NETLIFY_URL` with your actual Netlify deployment URL.
+
 
 ---
 
